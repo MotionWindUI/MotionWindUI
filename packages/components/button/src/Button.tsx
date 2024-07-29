@@ -8,19 +8,11 @@ import {
 import { buttonStyles } from "@motionwindui/theme/src/components/button";
 import React, { cloneElement, isValidElement } from "react";
 import { useButtonGroupContext } from "./ButtonGroupContext";
+import { MotionWindUIBaseProps } from "@motionwindui/base";
 
-export interface ButtonProps extends RACButtonProps {
-  /** The color/intentions of the button */
-  color?: "neutral" | "primary" | "secondary" | "success" | "warning" | "danger";
-
+export interface ButtonProps extends RACButtonProps, MotionWindUIBaseProps {
   /** The variant of the button */
   variant?: "solid" | "faded" | "bordered" | "ghost" | "light";
-
-  /** The size of the button */
-  size?: "sm" | "md" | "lg";
-
-  /** The radius of the button */
-  radius?: "none" | "sm" | "md" | "lg" | "full";
 
   /** The icon to display before the content */
   startContent?: React.ReactNode;
