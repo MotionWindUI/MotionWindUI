@@ -51,6 +51,7 @@ import {
   borderWidth,
   borderWidthPlugin,
 } from "./styles/spacingStyles/borderWidth";
+import theme from "tailwindcss/defaultTheme";
 
 const DEFAULT_THEME = "default";
 
@@ -301,6 +302,10 @@ const corePlugin = (config: MotionWindUIPluginConfig) => {
           },
           opacity: {
             ...opacityPlugin,
+          },
+          /* Ensure that we are using Tailwind's theme spacing */
+          spacing: {
+            ...theme.spacing,
           },
         },
       },
