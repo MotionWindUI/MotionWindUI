@@ -1,0 +1,39 @@
+name: Add Chore Task
+description: Adds a new task for a chore
+title: "[Chore]: "
+labels:
+  - "chore"
+projects:
+  - "MotionWindUI/2"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the information below to add a new chore task
+  - type: textarea
+    id: description
+    attributes:
+      label: What is the chore?
+      description: Please describe the chore.
+      placeholder: |
+        (Description)
+  - type: checkboxes
+    id: modification
+    attributes:
+      label: Does this modify an existing package?
+      description: Will this chore modify/add to an existing package?
+      options:
+        - label: Yes
+          required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area?
+      description: Which area of the project/monorepo does this target?
+      multiple: true
+      options:
+        - components
+        - core
+        - utils
+        - hooks
+        - docs

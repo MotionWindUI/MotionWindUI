@@ -1,0 +1,23 @@
+# Run linting and testing on the branch when pushed
+name: Feature Branch CI
+
+on:
+  push:
+    # Ignore the main and dev branch
+    branches-ignore:
+      - 'main'
+      - 'dev'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: "pnpm"
+
+      - run: pnpm install --hoist --no-frozen-lockfile
+      - run: pnpm lint

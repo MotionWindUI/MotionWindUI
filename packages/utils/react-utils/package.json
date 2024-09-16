@@ -1,0 +1,45 @@
+{
+  "name": "@motionwindui/react-utils",
+  "version": "1.0.0",
+  "description": "A library containing useful React utiltiy functions and types",
+  "keywords": [
+    "react-utils"
+  ],
+  "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+  "license": "ISC",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MotionWindUI/MotionWindUI",
+    "directory": "packages/utils/react-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
+  },
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "concurrently \"vite build --watch\" \"tsc --emitDeclarationOnly --watch\"",
+    "clean": "rm -rf dist",
+    "typeCheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:"
+  }
+}

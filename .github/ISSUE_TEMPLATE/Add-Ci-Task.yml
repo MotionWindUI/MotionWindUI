@@ -1,0 +1,19 @@
+name: Add CI Task
+description: Adds a new task that belongs to the CI
+title: "[CI]: "
+labels:
+  - "ci"
+projects:
+  - "MotionWindUI/2"
+assignees:
+  - Kyle-Gagnon-99
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out the information below to add a new CI task
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please provide a description of the task with possible steps

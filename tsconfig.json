@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["packages/components/*"],
+      "@core/*": ["packages/core/*"],
+      "@hooks/*": ["packages/hooks/*"],
+      "@utils/*": ["packages/utils/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "emitDeclarationOnly": true,
+    "skipDefaultLibCheck": true
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

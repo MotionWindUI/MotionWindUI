@@ -1,0 +1,20 @@
+import { {{capitalize componentName}}VariantProps } from "@motionwindui/theme";
+
+interface Props {
+  /**
+   * Ref to the DOM node.
+   */
+   ref?: React.ForwardedRef<HTMLElement | null>;
+}
+
+export type Use{{ capitalize componentName }}Props = Props & {{capitalize componentName}}VariantProps;
+
+export const use{{ capitalize componentName }} = ({ ref, ...props }: Use{{ capitalize componentName }}Props) => {
+  return {
+    ref,
+    className: "",
+    ...props,
+  };
+};
+
+export default use{{ capitalize componentName }};

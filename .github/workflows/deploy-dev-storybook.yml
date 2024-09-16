@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+name: 🚀 Deploy Storybook Development
+
+jobs:
+  deploy_sb:
+    name: Deploy Storybook Development
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        uses: ./.github/workflows/common-actions/install
+
+      - name: Build MotionWindUI
+        shell: bash
+        run: pnpm build
+
+      - name: Build Storybook
+        run: pnpm build:sb
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./packages/storybook/storybook-static
+          destination_dir: dev-storybook
+          publish_branch: gh-pages

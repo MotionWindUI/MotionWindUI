@@ -1,0 +1,43 @@
+name: Add Feature Task
+description: Template for creating a new feature task in the MotionWindUI project
+title: "[Feature]: "
+labels:
+  - "feature"
+projects:
+  - "MotionWindUI/2"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please provide detailed information below to create a new feature task
+  - type: textarea
+    id: description
+    attributes:
+      label: What is the new feature?
+      description: Please describe the new feature. If it is tied directly to a feature request, please add "Resolves #<Issue Number>"
+      placeholder: |
+        (Description)
+
+        (Optional) Resolves #(Issue Number)
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area?
+      description: Which area of the project or monorepo does this feature target?
+      multiple: true
+      options:
+        - components
+        - core
+        - utils
+        - hooks
+        - docs
+  - type: input
+    id: package-name
+    attributes:
+      label: If this is a new package, what will it be called?
+      placeholder: "Enter the package name, e.g., @motionwindui/package-name"
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: Extra Information
+      description: Any extra information about this feature?

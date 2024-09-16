@@ -1,0 +1,46 @@
+{
+  "name": "@motionwindui/{{packageName}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  "keywords": [
+    "{{packageName}}"
+  ],
+  "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+  "license": "ISC",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MotionWindUI/MotionWindUI",
+    "directory": "packages/{{outDir}}/{{packageName}}"
+  },
+  "bugs": {
+    "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
+  },
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "concurrently \"vite build --watch\" \"tsc --emitDeclarationOnly --watch\"",
+    "clean": "rm -rf dist",
+    "typeCheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:"
+  }
+}

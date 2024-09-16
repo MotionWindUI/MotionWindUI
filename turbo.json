@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["tsconfig.json"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      //"persistent": true,
+      "dependsOn": ["^dev"]
+    },
+    "test": {
+      "dependsOn": ["build", "lint", "^test"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "type-check": {
+      "cache": false,
+      "dependsOn": ["^type-check"]
+    }
+  }
+}
