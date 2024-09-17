@@ -8,7 +8,6 @@
     },
     "dev": {
       "cache": false,
-      //"persistent": true,
       "dependsOn": ["^dev"]
     },
     "test": {
@@ -17,9 +16,9 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "type-check": {
+    "typeCheck": {
       "cache": false,
-      "dependsOn": ["^type-check"]
+      "dependsOn": ["^typeCheck"]
     }
   }
 }

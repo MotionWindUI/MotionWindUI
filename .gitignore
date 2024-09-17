@@ -9,3 +9,4 @@ dist/
 
 # Turbo Console Log
 *.turbo
+*storybook.log

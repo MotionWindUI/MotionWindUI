@@ -27,8 +27,8 @@
     "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
   },
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
-    "dev": "concurrently \"vite build --watch\" \"tsc --emitDeclarationOnly --watch\"",
+    "build": "tsup",
+    "dev": "tsup --watch",
     "clean": "rm -rf dist",
     "typeCheck": "tsc --noEmit"
   },
