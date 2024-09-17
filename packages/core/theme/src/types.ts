@@ -1,4 +1,5 @@
 import { CustomThemeConfig } from 'tailwindcss/types/config';
+import { ThemeColorConfig } from './themeColors';
 
 /**
  * A type that represents the color scale of a theme.
@@ -43,3 +44,29 @@ export type TailwindThemeFunction = <
   path?: string,
   defaultValue?: TDefaultValue
 ) => TDefaultValue;
+
+/**
+ * The type that represents the different options that a theme can be customized with.
+ */
+interface ThemeOptions {
+  /* Whether or not hover and pressed states should darken the color */
+  darken?: boolean;
+  /* The color scales for the theme */
+  colors?: Partial<ThemeColorConfig>;
+  /* Extra colors that can be added to the theme. These do not reflect as options in variants but can be used in the extendComponent function */
+  extendedColors?: {
+    [key: string]: ColorScale;
+  };
+}
+
+/**
+ * The type definition for the MotionWindUI Tailwind plugin options.
+ */
+export interface MotionWindUIPluginOptions {
+  /* The main theme options */
+  theme?: ThemeOptions;
+  /* The custom themes that can be added to the plugin */
+  customThemes?: {
+    [key: string]: ThemeOptions;
+  };
+}

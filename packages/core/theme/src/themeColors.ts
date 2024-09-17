@@ -5,7 +5,8 @@ import {
   coolGray,
   fuchsiaBlue,
   scienceBlue,
-} from './base-colors';
+} from './baseColors';
+import { ColorScale } from './types';
 
 export const neutral = coolGray;
 export const primary = scienceBlue;
@@ -14,7 +15,36 @@ export const success = aquaForest;
 export const warning = brandyPunch;
 export const danger = cardinalRed;
 
-export const themeColorsThemeConfig = {
+/**
+ * The list of theme colors that are used in the theme.
+ */
+export const themeColors = {
+  neutral,
+  primary,
+  secondary,
+  success,
+  warning,
+  danger,
+};
+
+/**
+ * The list of theme colors that are used in the theme.
+ */
+export type ThemeColor = keyof typeof themeColors;
+
+/**
+ * The list of theme color scales that are used in the theme.
+ */
+export interface ThemeColorConfig {
+  neutral: ColorScale;
+  primary: ColorScale;
+  secondary: ColorScale;
+  success: ColorScale;
+  warning: ColorScale;
+  danger: ColorScale;
+}
+
+export const themeColorsThemeConfig: ThemeColorConfig = {
   neutral: {
     DEFAULT: 'var(--neutral)',
     foreground: 'var(--neutral-foreground)',

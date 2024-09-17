@@ -5,7 +5,7 @@ import {
   coolGray,
   brandyPunch,
   cardinalRed,
-} from 'src/base-colors';
+} from 'src/baseColors';
 import { TailwindThemeFunction } from 'src/types';
 
 export const themeColors = (theme: TailwindThemeFunction) => {

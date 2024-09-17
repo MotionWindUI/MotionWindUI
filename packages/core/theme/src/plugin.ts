@@ -1,14 +1,8 @@
 import plugin from 'tailwindcss/plugin';
-import { baseColors } from './base-colors';
-import { TailwindThemeFunction } from './types';
-import { generateCssVars } from './cssVars/cssVars';
+import { baseColors } from './baseColors';
+import { MotionWindUIPluginOptions, TailwindThemeFunction } from './types';
+import { generateCssVars, getTwUtilities } from './cssVars/cssVars';
 import { themeColorsThemeConfig } from './themeColors';
-
-const baseCssVars: any = {};
-
-baseCssVars[':root'] = {
-  '--test': '#000;',
-};
 
 const genCssVars = (theme: TailwindThemeFunction) => {
   return {
@@ -18,11 +12,14 @@ const genCssVars = (theme: TailwindThemeFunction) => {
   };
 };
 
-const corePlugin = () => {
+const corePlugin = (config?: MotionWindUIPluginOptions) => {
   return plugin(
-    ({ addBase, theme }) => {
+    ({ addBase, addUtilities, theme }) => {
       addBase({
         ...genCssVars(theme),
+      });
+      addUtilities({
+        ...getTwUtilities(),
       });
     },
     {
@@ -38,6 +35,8 @@ const corePlugin = () => {
   );
 };
 
-export const motionWindUIPlugin = (): ReturnType<typeof plugin> => {
-  return corePlugin();
+export const motionWindUIPlugin = (
+  config?: MotionWindUIPluginOptions
+): ReturnType<typeof plugin> => {
+  return corePlugin(config);
 };

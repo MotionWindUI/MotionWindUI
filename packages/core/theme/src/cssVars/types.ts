@@ -2,7 +2,7 @@
  * The following types are used to define CSS variables and used to generate CSS variables and utilties.
  */
 
-import { ColorShadeNumberScale } from 'src/types';
+import { ColorScale, ColorShadeNumberScale } from 'src/types';
 
 /**
  * A type that represents a CSS property.
@@ -30,4 +30,6 @@ export type BaseColorShadeInfo = {
   cssVar: string;
   /** The CSS property to use e.g. backgroundColor */
   cssProperty: CSSProperty;
+  /** The color scale to get the shades from */
+  colorScale: ColorScale;
 };
