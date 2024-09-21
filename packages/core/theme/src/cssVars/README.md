@@ -14,3 +14,4 @@ This directory helps contain typescript files that are used to generate CSS vari
 ### Subdirectories
 
 - `components`: This directory contains CSS variables related to specific components. Each component has its own file that contains the CSS variables related to that component.
+- `utils`: This directory contains CSS variables related to utility functions. Each function lives in a file that is named by what the function generally does.

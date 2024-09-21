@@ -25,8 +25,14 @@ export type ColorShadeNumberScale = {
  */
 export type ColorScale = {
   DEFAULT: string;
-  foreground: string;
-  background: string;
+  foreground: {
+    light: string;
+    dark: string;
+  };
+  background: {
+    light: string;
+    dark: string;
+  };
 } & ColorShadeNumberScale;
 
 /**
@@ -46,17 +52,42 @@ export type TailwindThemeFunction = <
 ) => TDefaultValue;
 
 /**
+ * The type that lets the developer define custom colors for a theme.
+ *
+ * It is not partial because the developer must define all the colors for the theme.
+ * The colors are injected into the theme and can be used in the extendComponent function.
+ */
+export type CustomThemeColorConfig = {
+  [key: string]: ColorScale;
+};
+
+/**
  * The type that represents the different options that a theme can be customized with.
  */
-interface ThemeOptions {
+export interface ThemeOptions {
+  /* Whether or not the developer would like any MotionWindUI CSS variables to be prefixed */
+  usePrefix?: boolean;
+
+  /* The prefix to add to the CSS variables. If not provided, it will default to 'mw' */
+  prefix?: string;
+
+  /* The name of the theme. If not provided, if this is a custom theme, then it will use the key of this object as the name. */
+  name?: string;
+
+  /* The name of the theme to extend. It uses the parent theme's variables unless otherwise extended / overriden */
+  extends?: string;
+
+  /* Whether or not this theme should have a light and dark mode */
+  useLightAndDark?: boolean;
+
   /* Whether or not hover and pressed states should darken the color */
   darken?: boolean;
+
   /* The color scales for the theme */
   colors?: Partial<ThemeColorConfig>;
+
   /* Extra colors that can be added to the theme. These do not reflect as options in variants but can be used in the extendComponent function */
-  extendedColors?: {
-    [key: string]: ColorScale;
-  };
+  extendedColors?: CustomThemeColorConfig;
 }
 
 /**
@@ -64,9 +95,9 @@ interface ThemeOptions {
  */
 export interface MotionWindUIPluginOptions {
   /* The main theme options */
-  theme?: ThemeOptions;
+  theme?: Omit<ThemeOptions, 'extends'>;
   /* The custom themes that can be added to the plugin */
   customThemes?: {
-    [key: string]: ThemeOptions;
+    [key: string]: Omit<ThemeOptions, 'usePrefix' | 'prefix'>;
   };
 }

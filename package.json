@@ -14,6 +14,8 @@
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "test": "turbo run test",
+    "typeCheck": "turbo run typeCheck",
+    "clean": "turbo run clean",
     "prepare": "husky",
     "create:component": "plop component",
     "create:hook": "plop hook",

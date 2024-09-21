@@ -28,7 +28,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "clean": "rm -rf dist .turbo",
+    "clean:build": "rm -rf dist .turbo",
+    "clean:node_modules": "rm -rf node_modules",
+    "clean": "pnpm clean:build && pnpm clean:node_modules",
     "typeCheck": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
   },

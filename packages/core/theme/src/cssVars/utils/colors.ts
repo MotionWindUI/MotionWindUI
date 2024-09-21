@@ -1,3 +1,11 @@
+import {
+  danger,
+  neutral,
+  primary,
+  secondary,
+  success,
+  warning,
+} from 'src/themeColors';
 import { ColorScale, ColorShadeNumberScale } from 'src/types';
 
 /**
@@ -71,7 +79,8 @@ export const adjustShade = (
   shade: Partial<keyof ColorShadeNumberScale>,
   colorScale: ColorScale,
   shadeOption: ColorShadeOptions = ColorShadeOptions.HOVER,
-  darken: boolean = true
+  darken: boolean = true,
+  isDarkMode: boolean = false
 ) => {
   // Convert the shades to an array
   const shades = Object.keys(colorScale).map(Number);
@@ -82,11 +91,31 @@ export const adjustShade = (
 
   // Get the amount to adjust the shade by
   const step = darken ? shadeOption : -shadeOption;
+  const adjustedStep = isDarkMode ? -step : step;
 
   // Ensure the shade is within the bounds of the color scale
-  if (currentIndex + step < 0) return shade;
-  if (currentIndex + step >= shades.length) return shade;
+  if (currentIndex + adjustedStep < 0) return 50;
+  if (currentIndex + adjustedStep >= shades.length) return 950;
 
   // Return the adjusted shade
-  return convertIndexToShade(currentIndex + step);
+  return convertIndexToShade(currentIndex + adjustedStep);
+};
+
+export const getColorScaleFromString = (colorScale: string): ColorScale => {
+  switch (colorScale) {
+    case 'neutral':
+      return neutral;
+    case 'primary':
+      return primary;
+    case 'secondary':
+      return secondary;
+    case 'success':
+      return success;
+    case 'warning':
+      return warning;
+    case 'danger':
+      return danger;
+    default:
+      return neutral;
+  }
 };

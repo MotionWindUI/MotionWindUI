@@ -44,7 +44,7 @@ export interface ThemeColorConfig {
   danger: ColorScale;
 }
 
-export const themeColorsThemeConfig: ThemeColorConfig = {
+export const themeColorsThemeConfig = {
   neutral: {
     DEFAULT: 'var(--neutral)',
     foreground: 'var(--neutral-foreground)',
