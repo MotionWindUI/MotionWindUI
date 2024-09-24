@@ -1,6 +1,11 @@
 import { TailwindThemeFunction, ThemeOptions } from 'src/types';
 import { themeColorNames, themeColors } from './colors/colors';
-import { BaseColorMap, BaseColorShadeInfo, GeneratedCssVars } from './types';
+import {
+  BaseColorMap,
+  BaseColorShadeInfo,
+  CSSColorProperty,
+  GeneratedCssVars,
+} from './types';
 import {
   generateCssVarsFromMap,
   generateTwUtilitiesFromMap,
@@ -98,7 +103,7 @@ export const generateCssVars = (
 /**
  * Get the Tailwind CSS utilities for the theme.
  */
-export const getTwUtilities = () => {
+export const getTwUtilities = (theme: ThemeOptions) => {
   const maps = [backgroundBaseShades, surfaceBaseShades];
   const utilities: Record<string, any> = {};
 
@@ -106,6 +111,42 @@ export const getTwUtilities = () => {
     for (const key in map) {
       const { cssProperty } = map[key as keyof typeof map];
       Object.assign(utilities, generateTwUtilitiesFromMap(map, cssProperty));
+    }
+  }
+
+  let textBaseShadeMap: Record<string, BaseColorShadeInfo> = {};
+  // Work out doing the text colors (WIP)
+  for (const color in themeColorNames) {
+    textBaseShadeMap = deepmerge(
+      textBaseShadeMap,
+      textBaseShades(
+        themeColorNames[color],
+        getColorScaleFromString(themeColorNames[color])
+      )
+    );
+  }
+
+  // Next up, generate text colors for the extended colors
+  for (const color in theme.extendedColors) {
+    // The color scale won't be used here, but it's required for the function
+    textBaseShadeMap = deepmerge(
+      textBaseShadeMap,
+      textBaseShades(color, getColorScaleFromString(color))
+    );
+  }
+
+  // Finally, generate the Tailwind CSS utilities for the text colors
+  for (const key in textBaseShadeMap) {
+    const { cssProperty } =
+      textBaseShadeMap[key as keyof typeof textBaseShadeMap];
+    if (typeof cssProperty === 'string') {
+      Object.assign(
+        utilities,
+        generateTwUtilitiesFromMap(
+          textBaseShadeMap,
+          cssProperty as CSSColorProperty
+        )
+      );
     }
   }
 

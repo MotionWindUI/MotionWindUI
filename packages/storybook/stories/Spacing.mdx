@@ -1,0 +1,166 @@
+import { Meta } from "@storybook/blocks";
+import './mdx-stylesheet.css';
+
+<Meta title="Design System / Spacing" />
+
+export const spacingTokens = {
+    'spacing-0': {
+        value: '0px',
+        rem: '0rem'
+    },
+    'spacing-2': {
+        value: '2px',
+        rem: '0.125rem'
+    },
+    'spacing-4': {
+        value: '4px',
+        rem: '0.25rem'
+    },
+    'spacing-8': {
+        value: '8px',
+        rem: '0.5rem'
+    },
+    'spacing-12': {
+        value: '12px',
+        rem: '0.75rem'
+    },
+    'spacing-16': {
+        value: '16px',
+        rem: '1rem'
+    },
+    'spacing-20': {
+        value: '20px',
+        rem: '1.25rem'
+    },
+    'spacing-24': {
+        value: '24px',
+        rem: '1.5rem'
+    },
+    'spacing-32': {
+        value: '32px',
+        rem: '2rem'
+    },
+    'spacing-48': {
+        value: '48px',
+        rem: '3rem'
+    },
+    'spacing-64': {
+        value: '64px',
+        rem: '4rem'
+    },
+    'spacing-96': {
+        value: '96px',
+        rem: '6rem'
+    },
+    'spacing-128': {
+        value: '128px',
+        rem: '8rem'
+    },
+    'spacing-192': {
+        value: '192px',
+        rem: '12rem'
+    },
+    'spacing-256': {
+        value: '256px',
+        rem: '16rem'
+    },
+    'spacing-384': {
+        value: '384px',
+        rem: '24rem'
+    },
+    'spacing-512': {
+        value: '512px',
+        rem: '32rem'
+    },
+    'spacing-640': {
+        value: '640px',
+        rem: '40rem'
+    },
+    'spacing-768': {
+        value: '768px',
+        rem: '48rem'
+    },
+}
+
+export const radiusTokens = {
+    'none': {
+        value: '0px',
+        rem: '0rem'
+    },
+    'sm': {
+        value: '2px',
+        rem: '0.125rem'
+    },
+    'md': {
+        value: '4px',
+        rem: '0.25rem'
+    },
+    'lg': {
+        value: '8px',
+        rem: '0.5rem'
+    },
+    'xl': {
+        value: '16px',
+        rem: '1rem'
+    },
+    'full': {
+        value: '9999px',
+        rem: '625rem'
+    },
+}
+
+# Spacing and Radius
+
+The spacing system is based off of TailwindCSS's spacing scale. The spacing scale is a set of values that are used to create consistent spacing between elements. The spacing scale is based on a 4px grid, which allows for easy alignment of elements. It can be used for things like padding, margin, and positioning.
+
+## Spacing Tokens
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Pixels</th>
+      <th>Rem</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(spacingTokens).map(([key, value]) => (
+      <tr key={key}>
+        <td>{key}</td>
+        <td>{value.value}</td>
+        <td>{value.rem}</td>
+        <td>
+          <div className="spacing-bar" style={{ width: value.value }}></div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Radius Tokens
+
+Radius tokens are used to define the border radius of an element. The radius tokens are based on the spacing scale, and are used to create consistent border radius values.
+
+<table>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Pixels</th>
+      <th>Rem</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {Object.entries(radiusTokens).map(([key, value]) => (
+      <tr key={key}>
+        <td>{key}</td>
+        <td>{value.value}</td>
+        <td>{value.rem}</td>
+        <td>
+          <div className="radius-box" style={{ borderRadius: value.rem }} />
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

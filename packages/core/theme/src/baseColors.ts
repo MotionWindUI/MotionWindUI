@@ -28,8 +28,14 @@ export const coolGray: ColorScale = {
   900: '#141a1f',
   950: '#0a0d0f',
   DEFAULT: '#668199',
-  foreground: '#f5f8fa',
-  background: '#141a1f',
+  foreground: {
+    light: '#f5f8fa',
+    dark: '#141a1f',
+  },
+  background: {
+    light: '#141a1f',
+    dark: '#f5f8fa',
+  },
 };
 
 /**
@@ -48,8 +54,14 @@ export const scienceBlue: ColorScale = {
   900: '#153965',
   950: '#0e2443',
   DEFAULT: '#227bd5',
-  foreground: '#f1f7fe',
-  background: '#153965',
+  foreground: {
+    light: '#f1f7fe',
+    dark: '#153965',
+  },
+  background: {
+    light: '#153965',
+    dark: '#f1f7fe',
+  },
 };
 
 /**
@@ -68,8 +80,14 @@ export const fuchsiaBlue: ColorScale = {
   900: '#52297a',
   950: '#361259',
   DEFAULT: '#a269e3',
-  foreground: '#faf6fe',
-  background: '#361259',
+  foreground: {
+    light: '#faf6fe',
+    dark: '#361259',
+  },
+  background: {
+    light: '#361259',
+    dark: '#faf6fe',
+  },
 };
 
 /**
@@ -88,8 +106,14 @@ export const aquaForest: ColorScale = {
   900: '#1a3a22',
   950: '#0e2014',
   DEFAULT: '#3f8a4e',
-  foreground: '#f1f8f2',
-  background: '#0e2014',
+  foreground: {
+    light: '#f1f8f2',
+    dark: '#0e2014',
+  },
+  background: {
+    light: '#0e2014',
+    dark: '#f1f8f2',
+  },
 };
 
 /**
@@ -108,8 +132,14 @@ export const brandyPunch: ColorScale = {
   900: '#643323',
   950: '#381910',
   DEFAULT: '#c78037',
-  foreground: '#fbf8ef',
-  background: '#381910',
+  foreground: {
+    light: '#fbf8ef',
+    dark: '#381910',
+  },
+  background: {
+    light: '#381910',
+    dark: '#fbf8ef',
+  },
 };
 
 /**
@@ -128,8 +158,14 @@ export const cardinalRed: ColorScale = {
   900: '#7a2134',
   950: '#440d18',
   DEFAULT: '#df545f',
-  foreground: '#fdf4f3',
-  background: '#440d18',
+  foreground: {
+    light: '#fdf4f3',
+    dark: '#440d18',
+  },
+  background: {
+    light: '#440d18',
+    dark: '#fdf4f3',
+  },
 };
 
 export const baseColors = {

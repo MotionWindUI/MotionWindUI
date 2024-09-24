@@ -1,9 +1,9 @@
 {
-  "name": "@motionwindui/{{componentName}}",
+  "name": "@motionwindui/button",
   "version": "1.0.0",
-  "description": "{{description}}",
+  "description": "A basic button",
   "keywords": [
-    "{{componentName}}"
+    "button"
   ],
   "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
   "license": "ISC",
@@ -20,7 +20,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MotionWindUI/MotionWindUI",
-    "directory": "packages/{{outDir}}/{{componentName}}"
+    "directory": "packages/components/button"
   },
   "bugs": {
     "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
@@ -31,21 +31,19 @@
     "clean:build": "rm -rf dist .turbo",
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
-    "typeCheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx",
+    "typeCheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18",
-    "@motionwindui/theme": ">=1.0.0"
+    "react-dom": ">=18"
   },
   "devDependencies": {
     "@motionwindui/theme": "workspace:*",
-    "react": "catalog:",
-    "react-dom": "catalog:",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "react-aria": "catalog:"
   }
 }

@@ -1,5 +1,6 @@
 import { CustomThemeConfig } from 'tailwindcss/types/config';
 import { ThemeColorConfig } from './themeColors';
+import { ClassValue } from 'tailwind-variants';
 
 /**
  * A type that represents the color scale of a theme.
@@ -101,3 +102,10 @@ export interface MotionWindUIPluginOptions {
     [key: string]: Omit<ThemeOptions, 'usePrefix' | 'prefix'>;
   };
 }
+
+/**
+ * The Typescript type for the transormation of a slot (from Tailwind Variants) to a class value (from Tailwind Variants).
+ */
+export type SlotToClasses<S extends string> = {
+  [key in S]?: ClassValue;
+};

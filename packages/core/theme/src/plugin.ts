@@ -11,7 +11,7 @@ import {
   themeColors,
 } from './cssVars/cssVars';
 import { themeColorsThemeConfig } from './themeColors';
-import { defaultThemeOptions } from './constants';
+import { DEFAULT_THEME_NAME, defaultThemeOptions } from './constants';
 import { deepmerge } from 'deepmerge-ts';
 
 const corePlugin = (config?: MotionWindUIPluginOptions) => {
@@ -35,8 +35,14 @@ const corePlugin = (config?: MotionWindUIPluginOptions) => {
 
       addBase({
         [':root']: root,
-        [':root[data-theme="light"]']: light,
-        [':root[data-theme="dark"]']: dark,
+        [`:root[data-theme="${DEFAULT_THEME_NAME}-light"]`]: light,
+        [`:root[data-theme="${DEFAULT_THEME_NAME}-ldark"]`]: dark,
+      });
+
+      const twUtilities = getTwUtilities(defaultTheme);
+
+      addUtilities(twUtilities, {
+        respectPrefix: false,
       });
     },
     {

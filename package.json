@@ -37,6 +37,7 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@jest/types": "^29.6.3",
+    "@storybook/react": "^8.3.0",
     "@swc/jest": "^0.2.36",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",

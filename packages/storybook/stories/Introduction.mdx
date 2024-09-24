@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='Design System / Introduction'/>
+
+# MotionWindUI
+
+MotionWindUI is a React component library that helps you build accessible, responsive, and production-ready websites and applications.
+
+## Technology Stack
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind Variants](https://www.tailwind-variants.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## How It Is Built
+
+Each component is a React forwardRef component that uses the `useComponent` hook to manage the component's state and props. The `useComponent` hook is a custom hook that uses the `useAria` hook from React Aria to manage the component's accessibility and focus management. The `useComponent` hook also uses the `useMotion` hook from Framer Motion to manage the component's animations and transitions.
+
+Each component is built with TypeScript and uses Tailwind CSS for styling. A MotionWindUI plugin is created for TailwindCSS to allow for theming and additional colors / styles.
+
+MotionWindUI also comes with a `extendComponentVaraints` function that allows you to override / add additional Tailwind CSS variants to the components.
+
+MotionWindUI also comes with a set of utility packages and hooks that help with a variety of aspects, such as utility for a component, hooks for managing states and more.

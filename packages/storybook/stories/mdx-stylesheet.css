@@ -1,0 +1,43 @@
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 8px; text-align: left; border-bottom: 1px solid #227bd5; }
+  .spacing-bar { background-color: #227bd5; height: 16px; }
+  .radius-box { background-color: #227bd5; height: 32px; width: 32px; display: inline-block; }
+
+  .token-table-container {
+  padding: 20px;
+}
+
+.token-search {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+
+.token-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.token-table th, .token-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.token-table th {
+  background-color: #f2f2f2;
+}
+
+.color-preview {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+
+.test-icon-fill {
+  fill: #1f643c;
+}
