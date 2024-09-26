@@ -44,23 +44,3 @@ export const Default = {
     ...defaultProps,
   },
 };
-
-export const CustomVariants = {
-  args: {
-    ...defaultProps,
-    color: 'primary',
-    size: 'lg',
-    radius: 'full',
-  },
-  render: (args: ButtonProps) => {
-    const extendedVariant = extendComponentVariants(buttonStyles, {
-      color: {
-        accent: ['bg-accent-500', 'text-white'],
-      },
-    });
-
-    return (
-      <Button {...args} extendedVariants={extendedVariant} color="accent" />
-    );
-  },
-};
