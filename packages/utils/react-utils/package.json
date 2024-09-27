@@ -39,6 +39,7 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@motionwindui/typescript-config": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "@types/react": "catalog:",

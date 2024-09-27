@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@motionwindui/react-utils": "workspace:*",
+    "@motionwindui/typescript-config": "workspace:*",
     "react-aria": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

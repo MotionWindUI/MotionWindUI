@@ -1,7 +1,4 @@
-import {
-  ButtonVariantProps,
-  CustomComponentVariants,
-} from '@motionwindui/theme';
+import { ButtonVariantProps } from '@motionwindui/theme';
 import { useMemo } from 'react';
 
 interface Props {
@@ -9,11 +6,6 @@ interface Props {
    * Ref to the DOM node.
    */
   ref?: React.ForwardedRef<HTMLElement | null>;
-
-  /**
-   * Testing
-   */
-  extendedVariants?: CustomComponentVariants;
 }
 
 export type UseButtonProps = Props & ButtonVariantProps;

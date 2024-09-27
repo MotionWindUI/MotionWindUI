@@ -1,0 +1,34 @@
+{
+  "name": "@motionwindui/eslint-config",
+  "version": "0.0.0",
+  "description": "ESLint configuration for MotionWindUI",
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "motionwindui"
+  ],
+  "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    "./library": "./library.js",
+    "./next": "./next.js",
+    "./react": "./react.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "typescript-eslint": "^8.7.0"
+  }
+}

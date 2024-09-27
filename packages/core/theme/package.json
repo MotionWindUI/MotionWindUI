@@ -8,9 +8,6 @@
   "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
   "license": "ISC",
   "sideEffects": false,
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -18,6 +15,7 @@
   "files": [
     "dist"
   ],
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MotionWindUI/MotionWindUI",
@@ -32,16 +30,20 @@
     "clean:build": "rm -rf dist .turbo",
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
-    "typeCheck": "tsc --noEmit"
+    "typeCheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@motionwindui/eslint-config": "workspace:*",
+    "@motionwindui/typescript-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "eslint": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

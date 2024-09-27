@@ -1,5 +1,9 @@
 packages:
-  - "packages/**/**"
+  - "packages/*"
+  - "packages/components/*"
+  - "packages/core/*"
+  - "packages/utils/*"
+  - "packages/tools/*"
 
 catalog:
   react: ^18.3.1
@@ -8,3 +12,8 @@ catalog:
   "@types/react-dom": ^18.3.0
   react-aria: ^3.34.1
   "@types/node": ^22.5.5
+  "typescript": "^5.6.0"
+  "eslint": "^9.11.1"
+  "@eslint/js": "^9.11.1"
+  "eslint-config-prettier": "^9.1.0"
+  "eslint-plugin-jest": "^28.8.3"

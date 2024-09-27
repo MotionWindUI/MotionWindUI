@@ -8,12 +8,17 @@
   "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
   "license": "ISC",
   "sideEffects": false,
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  }
   "files": [
     "dist/"
   ],
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -40,6 +45,7 @@
     "@motionwindui/theme": ">=1.0.0"
   },
   "devDependencies": {
+    "@motionwindui/typescript-config": "workspace:*",
     "@motionwindui/theme": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",

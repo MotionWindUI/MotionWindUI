@@ -1,9 +1,0 @@
-*.css
-dist
-esm/*
-public/*
-tests/*
-node_modules
-build
-!.storybook
-/**/.storybook/**
