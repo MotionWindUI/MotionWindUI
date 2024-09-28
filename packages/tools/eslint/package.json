@@ -15,18 +15,24 @@
   },
   "type": "module",
   "exports": {
+    "./base": "./base.js",
     "./library": "./library.js",
     "./next": "./next.js",
-    "./react": "./react.js"
+    "./react": "./react.js",
+    "./reactHooks": "./reactHooks.js"
   },
   "peerDependencies": {
     "eslint": ">=9"
   },
   "devDependencies": {
     "@eslint/js": "catalog:",
+    "eslint-plugin-import-x": "^4.3.0",
     "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-jest-dom": "^5.4.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-unicorn": "^55.0.0",
     "globals": "^15.9.0",
     "typescript": "catalog:"
   },

@@ -1,7 +1,7 @@
 import { TailwindThemeFunction, ThemeOptions } from 'src/types';
+import { deepmerge } from 'deepmerge-ts';
 import { themeColorNames, themeColors } from './colors/colors';
 import {
-  BaseColorMap,
   BaseColorShadeInfo,
   CSSColorProperty,
   GeneratedCssVars,
@@ -15,7 +15,6 @@ import { surfaceBaseShades } from './colors/surface';
 import { cssVarConstants } from './constants';
 import { textBaseShades } from './colors/text';
 import { getColorScaleFromString } from './utils/colors';
-import { deepmerge } from 'deepmerge-ts';
 export * from './colors/colors';
 
 /**

@@ -1,25 +1,17 @@
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettierPlugin from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
 import globals from 'globals';
+import baseConfig from './base.js';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  reactPlugin.configs.flat['jsx-runtime'],
+export default [
+  ...baseConfig,
+  jsxA11y.flatConfigs.recommended,
   {
-    files: ['src/**/*.ts', 'src/**/*.tsx'],
-    ignores: ['*.config.*', '*.d.ts'],
     plugins: {
-      '@typescript-eslint': tseslint.plugin,
       reactPlugin,
     },
     languageOptions: {
-      parser: tseslint.parser,
       parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
         ecmaFeatures: {
           jsx: true,
         },
@@ -29,21 +21,5 @@ export default tseslint.config(
         ...globals.node,
       },
     },
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          args: 'all',
-          argsIgnorePattern: '^_',
-          caughtErrors: 'all',
-          caughtErrorsIgnorePattern: '^_',
-          destructuredArrayIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-          ignoreRestSiblings: true,
-        },
-      ],
-    },
   },
-  prettierPlugin
-);
+];

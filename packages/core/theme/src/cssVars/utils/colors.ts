@@ -28,39 +28,50 @@ const convertIndexToShade = (
   let shade: Partial<keyof ColorShadeNumberScale> = 500;
 
   switch (index) {
-    case 0:
+    case 0: {
       shade = 50;
       break;
-    case 1:
+    }
+    case 1: {
       shade = 100;
       break;
-    case 2:
+    }
+    case 2: {
       shade = 200;
       break;
-    case 3:
+    }
+    case 3: {
       shade = 300;
       break;
-    case 4:
+    }
+    case 4: {
       shade = 400;
       break;
-    case 5:
+    }
+    case 5: {
       shade = 500;
       break;
-    case 6:
+    }
+    case 6: {
       shade = 600;
       break;
-    case 7:
+    }
+    case 7: {
       shade = 700;
       break;
-    case 8:
+    }
+    case 8: {
       shade = 800;
       break;
-    case 9:
+    }
+    case 9: {
       shade = 900;
       break;
-    case 10:
+    }
+    case 10: {
       shade = 950;
       break;
+    }
   }
 
   return shade;
@@ -103,19 +114,26 @@ export const adjustShade = (
 
 export const getColorScaleFromString = (colorScale: string): ColorScale => {
   switch (colorScale) {
-    case 'neutral':
+    case 'neutral': {
       return neutral;
-    case 'primary':
+    }
+    case 'primary': {
       return primary;
-    case 'secondary':
+    }
+    case 'secondary': {
       return secondary;
-    case 'success':
+    }
+    case 'success': {
       return success;
-    case 'warning':
+    }
+    case 'warning': {
       return warning;
-    case 'danger':
+    }
+    case 'danger': {
       return danger;
-    default:
+    }
+    default: {
       return neutral;
+    }
   }
 };

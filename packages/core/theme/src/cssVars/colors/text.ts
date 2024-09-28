@@ -4,9 +4,8 @@
  * Text colors are used for text and icons.
  */
 
-import { neutral } from 'src/themeColors';
-import { BaseColorShadeInfo, CSSColorProperty } from '../types';
 import { ColorScale, ColorShadeNumberScale } from 'src/types';
+import { BaseColorShadeInfo, CSSColorProperty } from '../types';
 
 /**
  * The prefix to use for text colors.

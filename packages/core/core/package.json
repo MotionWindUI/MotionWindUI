@@ -1,0 +1,52 @@
+{
+  "name": "@motionwindui/core",
+  "version": "1.0.0",
+  "description": "A package that contains core utilties, types, and functionality to be used by all of MotionWindUI",
+  "keywords": [
+    "core"
+  ],
+  "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+  "license": "ISC",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MotionWindUI/MotionWindUI",
+    "directory": "packages/core/core"
+  },
+  "bugs": {
+    "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean:build": "rm -rf dist .turbo",
+    "clean:node_modules": "rm -rf node_modules",
+    "clean": "pnpm clean:build && pnpm clean:node_modules",
+    "typeCheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@motionwindui/eslint-config": "workspace:*",
+    "@motionwindui/typescript-config": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:"
+  }
+}

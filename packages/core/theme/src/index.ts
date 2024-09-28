@@ -1,7 +1,4 @@
-import { SlotToClasses } from './types';
 export * from './plugin';
-
-export type { SlotToClasses };
 
 export * from './themeColors';
 
@@ -15,3 +12,5 @@ export type {
 
 // Components
 export * from './components/button';
+
+export { type SlotToClasses } from './types';

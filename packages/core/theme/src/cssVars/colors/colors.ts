@@ -182,13 +182,12 @@ export const themeColorsMerge = (
   // If there are custom colors, go through each category and check each shade.
   // If the value of the shade is in the form of theme('colors.category.shade', defaultValue),
   // we can extract the values from the theme function (since it is a string that needs to use the theme function).
-  Object.keys(customThemeColors).forEach(category => {
+  for (const category of Object.keys(customThemeColors)) {
     const colorScale = customThemeColors[category];
     for (const shade in colorScale) {
       // Check if the string matches the theme function pattern.
       // theme('colors.category.shade', defaultValue)
-      const regex =
-        /theme\(['"](colors\.[a-zA-Z0-9._-]+)['"],\s*['"](.+?)['"]\)/;
+      const regex = /theme\(["'](colors\.[\w.-]+)["'],\s*["'](.+?)["']\)/;
 
       // Get the value of the shade
       let shadeValue = colorScale[shade as keyof ColorScale];
@@ -218,7 +217,7 @@ export const themeColorsMerge = (
         }
       }
     }
-  });
+  }
 
   return {
     ...colors,

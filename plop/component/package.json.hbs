@@ -37,7 +37,8 @@
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
     "typeCheck": "tsc --noEmit",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "eslint . --fix"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -45,6 +46,7 @@
     "@motionwindui/theme": ">=1.0.0"
   },
   "devDependencies": {
+    "@motionwindui/eslint-config": "workspace:*",
     "@motionwindui/typescript-config": "workspace:*",
     "@motionwindui/theme": "workspace:*",
     "react": "catalog:",

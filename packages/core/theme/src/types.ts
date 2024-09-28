@@ -1,6 +1,6 @@
 import { CustomThemeConfig } from 'tailwindcss/types/config';
-import { ThemeColorConfig } from './themeColors';
 import { ClassValue } from 'tailwind-variants';
+import { ThemeColorConfig } from './themeColors';
 
 /**
  * A type that represents the color scale of a theme.

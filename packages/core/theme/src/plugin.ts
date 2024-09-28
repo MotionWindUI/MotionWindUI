@@ -1,25 +1,17 @@
 import plugin from 'tailwindcss/plugin';
+import { deepmerge } from 'deepmerge-ts';
 import { baseColors } from './baseColors';
-import {
-  MotionWindUIPluginOptions,
-  TailwindThemeFunction,
-  ThemeOptions,
-} from './types';
-import {
-  generateCssVars,
-  getTwUtilities,
-  themeColors,
-} from './cssVars/cssVars';
+import { MotionWindUIPluginOptions } from './types';
+import { generateCssVars, getTwUtilities } from './cssVars/cssVars';
 import { themeColorsThemeConfig } from './themeColors';
 import { DEFAULT_THEME_NAME, defaultThemeOptions } from './constants';
-import { deepmerge } from 'deepmerge-ts';
 
 const corePlugin = (config?: MotionWindUIPluginOptions) => {
   // First, get the options of the plugin by merging the default options with the provided options
   const options = deepmerge(defaultThemeOptions, config || {});
 
   // Then get the list of custom themes (if any)
-  const customThemes = options.customThemes || {};
+  const _customThemes = options.customThemes || {};
 
   return plugin(
     ({ addBase, addUtilities, theme }) => {

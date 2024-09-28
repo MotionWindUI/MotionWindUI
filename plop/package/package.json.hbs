@@ -32,13 +32,17 @@
     "clean:build": "rm -rf dist .turbo",
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
-    "typeCheck": "tsc --noEmit"
+    "typeCheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "eslint . --fix"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
   "devDependencies": {
+    "@motionwindui/eslint-config": "workspace:*",
+    "@motionwindui/typescript-config": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:",
     "@types/node": "catalog:",

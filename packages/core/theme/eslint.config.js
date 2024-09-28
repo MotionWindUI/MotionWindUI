@@ -1,4 +1,4 @@
-//import libConfig from '@motionwindui/eslint-config/library';
-import nextConfig from '@motionwindui/eslint-config/next';
+import libConfig from '@motionwindui/eslint-config/library';
+import tailwind from 'eslint-plugin-tailwindcss';
 
-export default [...nextConfig];
+export default [...libConfig, ...tailwind.configs['flat/recommended']];

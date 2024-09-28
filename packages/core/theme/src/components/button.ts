@@ -2,7 +2,7 @@ import { tv, VariantProps } from 'tailwind-variants';
 
 export const buttonStyles = tv({
   base: [
-    'z0',
+    'z-0',
     'group',
     'inline-flex',
     'relative',
