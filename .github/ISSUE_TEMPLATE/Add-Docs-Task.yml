@@ -3,8 +3,11 @@ description: Adds a new task for documentation
 title: "[Docs]: "
 labels:
   - "docs"
+  - "Status:Ready"
 projects:
   - "MotionWindUI/3"
+assignees:
+  - Kyle-Gagnon-99
 body:
   - type: markdown
     attributes:

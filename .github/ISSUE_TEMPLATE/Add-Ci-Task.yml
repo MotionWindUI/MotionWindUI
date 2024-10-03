@@ -3,6 +3,7 @@ description: Adds a new task that belongs to the CI
 title: "[CI]: "
 labels:
   - "ci"
+  - "Status:Ready"
 projects:
   - "MotionWindUI/3"
 assignees:

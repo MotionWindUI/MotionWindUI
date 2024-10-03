@@ -3,8 +3,11 @@ description: Template for creating a new feature task in the MotionWindUI projec
 title: "[Feature]: "
 labels:
   - "feature"
+  - "Status:Ready"
 projects:
   - "MotionWindUI/3"
+assignees:
+  - Kyle-Gagnon-99
 body:
   - type: markdown
     attributes:
