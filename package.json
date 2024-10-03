@@ -22,7 +22,8 @@
     "create:component": "plop component",
     "create:hook": "plop hook",
     "create:package": "plop package",
-    "sb": "pnpm --filter @motionwindui/storybook storybook"
+    "sb": "pnpm --filter @motionwindui/storybook storybook",
+    "docs:cb": "pnpm --filter @motionwindui/contributors-guide start"
   },
   "keywords": [
     "react",
@@ -36,6 +37,7 @@
   "author": "Kyle Gagnon",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@jest/types": "^29.6.3",

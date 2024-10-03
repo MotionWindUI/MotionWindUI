@@ -1,0 +1,33 @@
+# Run build, linting, and testing on a PR to the dev branch
+name: 🛡️ QA
+
+on:
+  pull_request:
+    branches:
+      - 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+      - run: pnpm install --hoist --no-frozen-lockfile
+      - run: pnpm build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'pnpm'
+
+      - run: pnpm install --hoist --no-frozen-lockfile
+      - run: pnpm lint

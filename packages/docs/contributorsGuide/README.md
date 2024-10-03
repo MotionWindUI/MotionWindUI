@@ -1,24 +1,41 @@
-# Contributor's Guide
+# Website
 
-This guide is a React application that is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. The goal of the guide is to provide a handy reference for contributors to the project. It includes information on how to add new features, fix bugs, write documentation, set up a development environment, and more.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-This guide is a work in progress. It is not published as this does not need to be published on a domain. Instead you can run the guide locally on your machine.
+### Installation
 
-## Installation
-
-To run the guide locally, you need to have Node.js installed on your machine. You can download Node.js from the [official website](https://nodejs.org/).
-
-After you have installed Node.js, you can clone the repository and install the dependencies:
-
-```bash
-git clone
-pnpm install
+```
+$ yarn
 ```
 
-## Running the Guide
+### Local Development
 
-To run the guide locally, you can use the following command (start at the root of the repository):
-
-```bash
-pnpm run docs:dev
 ```
+$ yarn start
+```
+
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

@@ -4,7 +4,7 @@ packages:
   - "packages/core/*"
   - "packages/utils/*"
   - "packages/tools/*"
-  - "packages/docs/contributorsGuide/contributorsGuide"
+  - "packages/docs/contributorsGuide"
 
 catalog:
   react: ^18.3.1

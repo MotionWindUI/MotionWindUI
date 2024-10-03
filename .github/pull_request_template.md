@@ -1,10 +1,23 @@
-# PULL_REQUEST_TITLE
+# 💻 Pull Request
 
-## Changes Being Made
-Give a quick summary of the changes you made in your own words. CodeRabbit will add a summary of your code changes for you but this should be your own words please.
+## 📝 Description
 
-## Related Issue / Bug
-Does this PR resolve an issue or bug? If so which one? (Please use close)
+- Describe the changes made in this pull request.
 
-## Test Plan
-What unit tests did you write to make sure this is ok?
+## 🔗 Related Issues
+
+Closes #ISSUE_NUMBER
+
+## 📋 Checklist
+
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
+
+## 💬 Additional Comments
+
+- Any additional comments or information.
