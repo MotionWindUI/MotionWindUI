@@ -4,25 +4,28 @@ title: "[Fix]: "
 labels:
   - "fix"
 projects:
-  - "MotionWindUI/2"
+  - "MotionWindUI/3"
 assignees:
   - Kyle-Gagnon-99
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the information below to add a new bug fix task
+        ### 🐛 Add a New Bug Fix Task
+
+        Please fill out the information below to add a new bug fix task.
+
   - type: textarea
     id: description
     attributes:
-      label: What does it fix?
+      label: 📝 What does it fix?
       description: What does this task aim to fix? What is the issue number?
       placeholder: |
         This task fixes...
-
         1. Closes #(Issue Number)
+
   - type: textarea
     id: extra-info
     attributes:
-      label: Extra Information
+      label: ℹ️ Extra Information
       description: Any extra information about this bug/fix? (Any ideas?)

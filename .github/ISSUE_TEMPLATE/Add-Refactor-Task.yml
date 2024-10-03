@@ -1,25 +1,30 @@
 name: Add Refactor Task
 description: Adds a new task to refactor code
+title: "[Refactor]: "
 labels:
   - "refactor"
 projects:
-  - "MotionWindUI/2"
+  - "MotionWindUI/3"
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the information below to add a new refactor task
+        ### 🔄 Add a New Refactor Task
+
+        Please fill out the information below to add a new refactor task.
+
   - type: textarea
     id: description
     attributes:
-      label: What is being refactored?
+      label: 📝 What is being refactored?
       description: Please describe what is being refactored.
       placeholder: |
         (Description)
+
   - type: dropdown
     id: area
     attributes:
-      label: Which area?
+      label: 📂 Which area?
       description: Which area of the project/monorepo does this target?
       multiple: true
       options:
