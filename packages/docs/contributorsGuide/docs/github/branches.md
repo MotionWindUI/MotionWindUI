@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+id: branches
+---
+
 # Branches
 
 Branches are a critical feature to not only Git but to software development in general. They allow you to work on different features, bug fixes, or experiments without affecting the main codebase. This page will describe the various branches and tags that are used in the project. To learn more about the naming conventions for branches, please refer to the [Naming Convention](./naming-convention.md) document.
@@ -17,3 +22,7 @@ The `dev` branch is the development branch in the repository. It is the branch t
 ### Canary Branch
 
 The `canary` branch is a special branch that is used for incremental deployments. They build artifiacts and are tagged because they are used for beta testing. It takes the changes from the `dev` branch periodically and builds the project. It will take tag any new versions of a package with a `canary` tag.
+
+## Other Branches
+
+Other branches are branches that are used for specific features, bug fixes, or experiments. These branches should follow the naming conventions outlined in the [Naming Convention](./naming-convention.md) document.
