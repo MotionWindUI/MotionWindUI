@@ -58,3 +58,22 @@ A lot of the times a branch can be created by using the GitHub web interface. It
 Depending on the name of the issue, the branch name may be too long or unreadable. In this case, it is okay to shorten the description to make the branch name more readable. Just make sure the branch name provides enough context to understand the changes being made. Make sure the issue number and area are still present in the branch name.
 
 :::
+
+## Commit Messages
+
+Commit messages should be descriptive and provide context to the changes being made. For each commit, the message should follow the format:
+
+`
+<area>: <description>
+`
+
+- **area**: The area of the project that the changes are related to. This should be one of the words / phrases listed below:
+  - feature
+  - fix
+  - docs
+  - refactor
+  - test
+  - chore
+  - ci
+
+If it is applicable, after the area, you can add the issue number or the section of the project that the changes are related to. This can help provide more context to the changes being made.
