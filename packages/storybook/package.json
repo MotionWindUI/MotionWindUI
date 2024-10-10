@@ -11,9 +11,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@motionwindui/theme": "workspace:*"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
-    "@motionwindui/theme": "workspace:*",
     "@storybook/addon-essentials": "^8.3.3",
     "@storybook/addon-interactions": "^8.3.3",
     "@storybook/addon-links": "^8.3.3",

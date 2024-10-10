@@ -1,21 +1,51 @@
-type VariantValues = string[]; // Arrays of Tailwind classes
+/**
+ * @fileoverview Types used for utility functions inside of the theme package.
+ */
 
-// Define a type for slots if applicable
-export type ComponentVariantsWithSlots<S extends string> = {
-  slots: Record<S, VariantValues>;
-  variants: Record<string, Record<S | string, VariantValues>>;
-  defaultVariants?: Record<string, string>;
+import { ClassValue } from 'tailwind-variants';
+
+/**
+ * The type that gets the class values of a slot.
+ */
+export type SlotClassValues<S> = {
+  [key in keyof S]?: ClassValue;
 };
 
-// Define a type for components without slots
-export type ComponentVariants = {
-  base: VariantValues;
-  variants: Record<string, Record<string, VariantValues>>;
-  defaultVariants?: Record<string, string>;
+/**
+ * The type that represents the variant from Tailwind-Variants
+ *
+ * Given S, the type is where the overall type is an object with string keys (K).
+ * Each key has an object with string keys (P). Given S, if it is undefined, then the value is a ClassValue.
+ * Otherwise, the value is a SlotClassValues<S>.
+ *
+ * @example
+ *
+ * const variants: Variants<'hover'> = {
+ *  hover: ['hover:bg-gray-100'],
+ * };
+ *
+ * const variants: Variants<Slots> = {
+ *  hover: {
+ *    bg: 'hover:bg-gray-100',
+ *  }
+ * }
+ */
+export type Variants<S> = {
+  [K: string]: {
+    [P: string]: S extends undefined ? ClassValue : SlotClassValues<S>;
+  };
 };
 
-// Helper type for extending the component variants
-export type ExtendComponentVariants<T> =
-  T extends ComponentVariantsWithSlots<infer S>
-    ? ComponentVariantsWithSlots<S>
-    : ComponentVariants;
+/**
+ * The type that gets the props of a React component.
+ *
+ * @example
+ *
+ * // Props of a button element
+ * type ButtonProps = ComponentProps<'button'>;
+ * // Props of a Button component
+ * type ButtonProps = ComponentProps<typeof Button>;
+ *
+ */
+export type ComponentProps<T extends React.ElementType> =
+  React.ComponentProps<T>;

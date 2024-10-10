@@ -1,5 +1,5 @@
 import React from 'react';
-import useButton, { UseButtonProps } from './useButton';
+import useButton, { UseButtonProps } from './useButton.js';
 
 export interface ButtonProps extends UseButtonProps {}
 

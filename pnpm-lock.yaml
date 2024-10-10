@@ -103,10 +103,11 @@ importers:
         version: 5.6.2
 
   packages/components/button:
-    devDependencies:
+    dependencies:
       '@motionwindui/theme':
         specifier: workspace:*
         version: link:../../core/theme
+    devDependencies:
       '@motionwindui/typescript-config':
         specifier: workspace:*
         version: link:../../tools/tsconfig
@@ -267,13 +268,14 @@ importers:
         version: 5.5.4
 
   packages/storybook:
+    dependencies:
+      '@motionwindui/theme':
+        specifier: workspace:*
+        version: link:../core/theme
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.9.0
         version: 1.9.0(react@18.3.1)
-      '@motionwindui/theme':
-        specifier: workspace:*
-        version: link:../core/theme
       '@storybook/addon-essentials':
         specifier: ^8.3.3
         version: 8.3.3(storybook@8.3.3)(webpack-sources@3.2.3)
