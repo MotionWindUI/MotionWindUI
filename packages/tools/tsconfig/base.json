@@ -6,7 +6,7 @@
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "target": "ESNext",
     "jsx": "react-jsx",
     "module": "ESNext",
@@ -16,6 +16,13 @@
     "emitDeclarationOnly": true,
     "types": ["jest", "node", "@testing-library/jest-dom", "@types/jest-axe"]
   },
-  "include": ["../../**/*"],
-  "exclude": ["**/node_modules", "**/dist", "**/turbo"]
+  "include": ["packages/**/*.ts", "packages/**/*.tsx"],
+  "exclude": [
+    "**/node_modules",
+    "**/dist",
+    "**/turbo",
+    "**/__tests__/**",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
 }

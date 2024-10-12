@@ -16,6 +16,15 @@
     "dist"
   ],
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/motionwindui-theme.esm.js",
+      "require": "./dist/motionwindui-theme.cjs.js",
+      "node": "./dist/motionwindui-theme.cjs.js",
+      "default": "./dist/motionwindui-theme.esm.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MotionWindUI/MotionWindUI",
@@ -25,8 +34,8 @@
     "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
+    "build": "vite build",
+    "dev": "vite build --watch",
     "clean:build": "rm -rf dist .turbo",
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
@@ -41,6 +50,7 @@
   "devDependencies": {
     "@motionwindui/eslint-config": "workspace:*",
     "@motionwindui/typescript-config": "workspace:*",
+    "@motionwindui/vite-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
