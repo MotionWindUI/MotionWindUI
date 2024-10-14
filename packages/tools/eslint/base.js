@@ -32,7 +32,7 @@ export default tseslint.config(
     },
     ...jestPlugin.configs['flat/recommended'],
     ...jestDOMPlugin.configs['flat/recommended'],
-    ignores: ['*.config.*', '*.d.ts'],
+    ignores: ['*.config.*', '*.d.ts', 'dist/**', 'node_modules/**'],
     rules: {
       /**
        * @justification This rule is allowed because it is sometimes necessary to use the `any` type.

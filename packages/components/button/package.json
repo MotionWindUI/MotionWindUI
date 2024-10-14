@@ -39,7 +39,8 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "@motionwindui/theme": ">=1.0.0"
   },
   "devDependencies": {
     "@motionwindui/theme": "workspace:*",
