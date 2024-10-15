@@ -22,4 +22,7 @@ body:
       label: 📝 Description
       description: Please provide a description of the task with possible steps.
       placeholder: |
-        e.g., Set up a new CI pipeline for testing.
+        e.g., Set up a new CI pipeline for testing:
+        1. Configure test environment
+        2. Define test scripts
+        3. Set up reporting mechanism

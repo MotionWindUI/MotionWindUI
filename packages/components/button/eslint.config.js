@@ -1,3 +1,6 @@
 import nextConfig from '@motionwindui/eslint-config/next';
 
-export default [...nextConfig];
+export default [
+  ...nextConfig,
+  // Add any button-specific ESLint rules here
+];

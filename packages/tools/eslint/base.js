@@ -35,7 +35,12 @@ export default tseslint.config(
     },
     ...jestPlugin.configs['flat/recommended'],
     ...jestDOMPlugin.configs['flat/recommended'],
-    files: ['src/**/*.ts', 'src/**/*.tsx'],
+    files: [
+      'src/**/*.ts',
+      'src/**/*.tsx',
+      '**/__tests__/**/*.test.ts',
+      '**/__tests__/**/*.test.tsx',
+    ],
     rules: {
       /**
        * @justification This rule is allowed because it is sometimes necessary to use the `any` type.
