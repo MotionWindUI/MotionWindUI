@@ -1,26 +1,34 @@
 name: Add Refactor Task
 description: Adds a new task to refactor code
+title: "[Refactor]: <brief description>"
 labels:
   - "refactor"
+  - "Status:Ready"
 projects:
-  - "MotionWindUI/2"
+  - "MotionWindUI/3"
+assignees:
+  - Kyle-Gagnon-99
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the information below to add a new refactor task
+        ### 🔄 Add a New Refactor Task
+
+        Please fill out the information below to add a new refactor task.
+
   - type: textarea
     id: description
     attributes:
-      label: What is being refactored?
+      label: 📝 What is being refactored?
       description: Please describe what is being refactored.
       placeholder: |
         (Description)
+
   - type: dropdown
     id: area
     attributes:
-      label: Which area?
-      description: Which area of the project/monorepo does this target?
+      label: 📂 Which area?
+      description: Select the area(s) of the project/monorepo that this refactor task targets.
       multiple: true
       options:
         - components

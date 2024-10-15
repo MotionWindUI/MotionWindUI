@@ -3,33 +3,36 @@ description: Adds a new task for a chore
 title: "[Chore]: "
 labels:
   - "chore"
+  - "Status:Ready"
 projects:
-  - "MotionWindUI/2"
+  - "MotionWindUI/3"
+assignees:
+  - Kyle-Gagnon-99
 body:
   - type: markdown
     attributes:
       value: |
-        Please fill out the information below to add a new chore task
+        ### 🧹 Add a New Chore Task
+
+        Please provide the necessary details to add a new chore task to the project.
+
   - type: textarea
     id: description
     attributes:
-      label: What is the chore?
-      description: Please describe the chore.
+      label: 📝 What is the chore?
+      description: Please describe the chore in detail.
       placeholder: |
-        (Description)
-  - type: checkboxes
-    id: modification
-    attributes:
-      label: Does this modify an existing package?
-      description: Will this chore modify/add to an existing package?
-      options:
-        - label: Yes
-          required: false
+        e.g., Refactor the components to adhere to new format.
+        Specific tasks:
+        - Update component A
+        - Modify styling in component B
+        - Ensure consistency across all affected files
+
   - type: dropdown
     id: area
     attributes:
-      label: Which area?
-      description: Which area of the project/monorepo does this target?
+      label: 📂 Which area?
+      description: Select the area of the project/monorepo that this chore targets.
       multiple: true
       options:
         - components

@@ -1,0 +1,46 @@
+name: Add Documentation Task
+description: Adds a new task for documentation
+title: "[Docs]: "
+labels:
+  - "docs"
+  - "Status:Ready"
+projects:
+  - "MotionWindUI/3"
+assignees:
+  - Kyle-Gagnon-99
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📚 Add a New Documentation Task
+
+        Please fill out the information below to add a new documentation task.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 What is the documentation task?
+      description: Please describe the documentation task in detail.
+      placeholder: |
+        Please provide:
+        - The specific documentation area or file to be updated
+        - A brief overview of the changes or additions needed
+        - Any relevant context or resource
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 📂 Which documentation area?
+      description: Which area of the documentation does this task target?
+      multiple: false
+      options:
+        - Contributor's Guide
+        - MotionWindUI Guide
+        - Storybook
+        - Other (please specify in the description)
+
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: ℹ️ Extra Information
+      description: Any extra information about this documentation task?
