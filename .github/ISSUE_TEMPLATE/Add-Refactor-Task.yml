@@ -1,6 +1,6 @@
 name: Add Refactor Task
 description: Adds a new task to refactor code
-title: "[Refactor]: "
+title: "[Refactor]: <brief description>"
 labels:
   - "refactor"
   - "Status:Ready"
@@ -28,7 +28,7 @@ body:
     id: area
     attributes:
       label: 📂 Which area?
-      description: Which area of the project/monorepo does this target?
+      description: Select the area(s) of the project/monorepo that this refactor task targets.
       multiple: true
       options:
         - components

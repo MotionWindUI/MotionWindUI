@@ -45,11 +45,11 @@ body:
       description: What browsers did the bug occur on? (You don't have to select ones that you don't have)
       multiple: true
       options:
-        - Firefox
         - Chrome
-        - Safari
         - Edge
+        - Firefox
         - Opera
+        - Safari
 
   - type: textarea
     id: logs

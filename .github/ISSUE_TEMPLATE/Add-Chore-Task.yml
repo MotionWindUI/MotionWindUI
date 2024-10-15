@@ -23,6 +23,10 @@ body:
       description: Please describe the chore in detail.
       placeholder: |
         e.g., Refactor the components to adhere to new format.
+        Specific tasks:
+        - Update component A
+        - Modify styling in component B
+        - Ensure consistency across all affected files
 
   - type: dropdown
     id: area

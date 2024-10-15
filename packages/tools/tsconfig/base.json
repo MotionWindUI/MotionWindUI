@@ -6,7 +6,7 @@
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "target": "ESNext",
     "jsx": "react-jsx",
     "module": "NodeNext",
