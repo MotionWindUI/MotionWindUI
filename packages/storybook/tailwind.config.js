@@ -33,11 +33,6 @@ module.exports = {
     motionWindUIPlugin({
       theme: {
         darken: true,
-        colors: {
-          neutral: {
-            50: '#ffefff',
-          },
-        },
         extendedColors: {
           accent: {
             50: 'theme("colors.jelly-bean.50")',

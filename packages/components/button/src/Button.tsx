@@ -1,16 +1,23 @@
+/* eslint-disable unicorn/filename-case */
 import React from 'react';
-import useButton, { UseButtonProps } from './useButton.js';
+import useButton, { UseButtonProps } from './useButton';
 
-export interface ButtonProps extends UseButtonProps {}
+export interface ButtonProps extends UseButtonProps {
+  /**
+   * Ref to the DOM node.
+   */
+  ref?: React.ForwardedRef<HTMLElement | null>;
+}
 
 const Button = React.forwardRef(
   (props: ButtonProps, ref: React.ForwardedRef<HTMLElement>) => {
-    const { className, ...rest } = useButton({
+    const { className, ..._rest } = useButton({
       ...props,
+      color: 'neutral',
       ref,
     });
 
-    return <button>Click Me</button>;
+    return <button className={className}>Click Me</button>;
   }
 );
 

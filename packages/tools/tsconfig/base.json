@@ -9,7 +9,7 @@
     "moduleResolution": "Bundler",
     "target": "ESNext",
     "jsx": "react-jsx",
-    "module": "NodeNext",
+    "module": "Preserve",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,

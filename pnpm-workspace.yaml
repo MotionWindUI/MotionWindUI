@@ -1,4 +1,5 @@
 packages:
+  - "packages/storybook"
   - "packages/components/*"
   - "packages/core/*"
   - "packages/utils/*"
