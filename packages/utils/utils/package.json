@@ -1,31 +1,31 @@
 {
-  "name": "@motionwindui/button",
+  "name": "@motionwindui/utils",
   "version": "1.0.0",
-  "description": "A basic button",
+  "description": "General utility functions used by MotionWindUI",
   "keywords": [
-    "button"
+    "utils"
   ],
   "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
   "license": "ISC",
   "sideEffects": false,
-  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     }
-  },
-  "files": [
-    "dist/"
-  ],
-  "publishConfig": {
-    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MotionWindUI/MotionWindUI",
-    "directory": "packages/components/button"
+    "directory": "packages/utils/utils"
   },
   "bugs": {
     "url": "https://github.com/MotionWindUI/MotionWindUI/issues"
@@ -36,23 +36,17 @@
     "clean:build": "rm -rf dist .turbo",
     "clean:node_modules": "rm -rf node_modules",
     "clean": "pnpm clean:build && pnpm clean:node_modules",
-    "typeCheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18",
-    "@motionwindui/theme": ">=1.0.0"
-  },
-  "dependencies": {
-    "@motionwindui/theme": "workspace:*"
+    "typeCheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0",
+    "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@motionwindui/eslint-config": "workspace:*",
     "@motionwindui/typescript-config": "workspace:*",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-aria": "catalog:"
+    "@types/node": "catalog:"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2"
   }
 }

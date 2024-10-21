@@ -48,12 +48,18 @@
   "devDependencies": {
     "@motionwindui/eslint-config": "workspace:*",
     "@motionwindui/typescript-config": "workspace:*",
+    "@motionwindui/utils": "workspace:*",
+    "@types/lodash.kebabcase": "^4.1.9",
+    "@types/lodash.mapkeys": "^4.6.9",
     "@types/node": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "color2k": "^2.0.3",
     "eslint": "catalog:",
     "eslint-plugin-tailwindcss": "^3.17.4",
+    "flat": "^6.0.1",
+    "lodash.kebabcase": "^4.1.1",
+    "lodash.mapkeys": "^4.6.0",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

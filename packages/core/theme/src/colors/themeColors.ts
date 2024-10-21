@@ -1,17 +1,23 @@
-import { danger } from './danger';
+import { darkColors } from './dark';
+import { lightColors } from './light';
 import { neutral } from './neutral';
-import { primary } from './primary';
-import { secondary } from './secondary';
-import { success } from './success';
-import { warning } from './warning';
 
 export const themeColors = {
-  white: '#ffffff',
-  black: '#000000',
-  neutral,
-  primary,
-  secondary,
-  success,
-  warning,
-  danger,
+  white: '#f0f0f0',
+  black: '#222222',
+  neutral: neutral,
+  light: {
+    primary: lightColors.primary,
+    secondary: lightColors.secondary,
+    success: lightColors.success,
+    warning: lightColors.warning,
+    danger: lightColors.danger,
+  },
+  dark: {
+    primary: darkColors.primary,
+    secondary: darkColors.secondary,
+    success: darkColors.success,
+    warning: darkColors.warning,
+    danger: darkColors.danger,
+  },
 };
