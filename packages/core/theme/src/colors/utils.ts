@@ -78,6 +78,8 @@ export const getReadableColorBW = (
   foreground: string,
   white: string,
   dark: string,
+  mode: 'light' | 'dark' = 'light',
+  state: 'hover' | 'active' = 'hover',
   standard: 'AA' | 'AAA' = 'AA'
 ) => {
   // First get the contrast of the foreground color with the white color
@@ -98,7 +100,7 @@ export const getReadableColorBW = (
 
   // If neither are valid, place a warning and return whichever color is higher
   console.warn(
-    `Could not find a valid color for ${foreground}: Contrast with white is ${contrastWhite}, contrast with black is ${contrastBlack}`
+    `Mode - ${mode} | State - ${state}: Could not find a valid color for ${foreground}: Contrast with white is ${contrastWhite}, contrast with black is ${contrastBlack}`
   );
   return contrastWhite > contrastBlack ? white : dark;
 };
@@ -208,6 +210,7 @@ export const getShadeFromColor = (
   colorScale: ShadeScale,
   state: 'hover' | 'active' = 'hover',
   darkenOnHover: boolean = true,
+  mode: 'light' | 'dark' = 'light',
   checkAccessibility: boolean = false,
   standard: ColorAccessibility = 'AA'
 ) => {
@@ -236,12 +239,14 @@ export const getShadeFromColor = (
   // darkenOnHover will change the direction of the index
   // darkenOnHover * state will give the shade
   // If the shade is out of bounds, return the shade at the edge it went out of bounds
+  // The mode modifier will "lighten" the color if the mode is dark and "darken" the color if the mode is light
+  const modeModifier = mode === 'dark' ? -1 : 1;
   let newIndex = index;
 
   if (state === 'hover') {
-    newIndex += darkenOnHover ? 1 : -1;
+    newIndex += darkenOnHover ? modeModifier * 1 : modeModifier * -1;
   } else if (state === 'active') {
-    newIndex += darkenOnHover ? 2 : -2;
+    newIndex += darkenOnHover ? modeModifier * 2 : modeModifier * -2;
   }
 
   // Check if the new index is out of bounds

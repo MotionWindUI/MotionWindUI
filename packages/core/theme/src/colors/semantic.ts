@@ -33,26 +33,40 @@ export const getThemeColors = (
     [key in ColorVariants]: ShadeScale;
   },
   white: string,
-  dark: string
+  dark: string,
+  mode: 'light' | 'dark' = 'light'
 ): ThemeColor => {
   // Get an object of the calculated state shades for each color
   const getShade = (
     color: string,
     colorScale: ShadeScale
   ): ExtendedColorScaleWithoutString => {
-    const hover = getShadeFromColor(color, colorScale, 'hover', darkenOnHover);
+    const hover = getShadeFromColor(
+      color,
+      colorScale,
+      'hover',
+      darkenOnHover,
+      mode
+    );
     const active = getShadeFromColor(
       color,
       colorScale,
       'active',
-      darkenOnHover
+      darkenOnHover,
+      mode
     );
 
     return {
       hover,
       active,
-      'foreground-hover': getReadableColorBW(hover || color, white, dark),
-      'foreground-active': getReadableColorBW(active || color, white, dark),
+      'foreground-hover': getReadableColorBW(hover!, white, dark, mode),
+      'foreground-active': getReadableColorBW(
+        active!,
+        white,
+        dark,
+        mode,
+        'active'
+      ),
     };
   };
 
@@ -122,9 +136,9 @@ export const themeLightColors: ThemeColor = {
   ...baseColors.light,
   neutral: {
     ...colors.neutral,
-    DEFAULT: colors.neutral[300],
+    DEFAULT: colors.neutral[500],
     foreground: getReadableColorBW(
-      colors.neutral[300],
+      colors.neutral[500],
       colors.white,
       colors.black
     ),
@@ -180,9 +194,9 @@ export const themeDarkColors: ThemeColor = {
   ...baseColors.dark,
   neutral: {
     ...colors.neutral,
-    DEFAULT: colors.neutral[700],
+    DEFAULT: colors.neutral[800],
     foreground: getReadableColorBW(
-      colors.neutral[700],
+      colors.neutral[800],
       colors.white,
       colors.black
     ),
@@ -255,7 +269,8 @@ export const themeColors = (darkenOnHover: boolean = true) => ({
       danger: colors.light.danger,
     },
     colors.white,
-    colors.black
+    colors.black,
+    'light'
   ),
   dark: getThemeColors(
     themeDarkColors,
@@ -277,6 +292,7 @@ export const themeColors = (darkenOnHover: boolean = true) => ({
       danger: colors.dark.danger,
     },
     colors.white,
-    colors.black
+    colors.black,
+    'dark'
   ),
 });

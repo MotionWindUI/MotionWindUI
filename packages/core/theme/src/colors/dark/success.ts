@@ -19,4 +19,4 @@ export const success: ShadeScale = {
   '950': '#0d2618',
 };
 
-export const SUCCESS_DARK_DEFAULT = success[600];
+export const SUCCESS_DARK_DEFAULT = success[700];
